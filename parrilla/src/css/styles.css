@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+:root{
+    --brasa: #c8440a;
+
+}
+
+@layer components {
+
+    .hero-title {
+        font-family: 'Playfair Display', serif;
+    }
+
+    .btn {
+        @apply inline-flex items-center justify-center px-6 py-3 rounded-sm                                                                      font-semibold transition-all duration-200 cursor-pointer;
+    }
+
+    .btn-primary {
+        @apply bg-[var(--brasa)] text-white hover:bg-[#a33a08] hover:scale-105;
+    }
+
+    .btn-outline {
+        @apply border-2 border-[var(--brasa)] text-[var(--brasa)] hover:bg-[var(--brasa)] hover:text-white;
+    }
+}
