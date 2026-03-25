@@ -9,6 +9,7 @@
   <link rel="icon" type="image/svg+xml" href="/templates_webpages/assets/logo-D0RwOYCY.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="https://images.unsplash.com">
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" crossorigin href="/templates_webpages/assets/hamburgueseria-BLwKNmfF.css">
 </head>
@@ -51,11 +52,13 @@
     <section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-[var(--carbon)]">
       <div class="absolute inset-0 z-0">
         <img 
-          src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=1999&auto=format&fit=crop" 
+          src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=1920&auto=format&fit=crop" 
           alt="Hamburguesa artesanal deliciosa"
           class="w-full h-full object-cover opacity-40"
-          width="1999"
-          height="1333"
+          width="1920"
+          height="1080"
+          fetchpriority="high"
+          decoding="async"
         >
         <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80"></div>
       </div>
@@ -106,11 +109,12 @@
               <article class="product-card" data-product="Classic Burger" data-price="450">
                 <div class="product-image">
                   <img 
-                    src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=800&auto=format&fit=crop" 
+                    src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=400&auto=format&fit=crop" 
                     alt="Classic Burger con carne smash y cheddar"
                     width="400"
                     height="300"
                     loading="lazy"
+                    decoding="async"
                   >
                   <span class="absolute top-3 left-3 bg-[var(--mostaza)] text-[var(--carbon)] text-xs font-bold px-2 py-1 rounded">Popular</span>
                 </div>
@@ -137,11 +141,12 @@
               <article class="product-card" data-product="Double Cheese" data-price="580">
                 <div class="product-image">
                   <img 
-                    src="https://images.unsplash.com/photo-1553979459-d2229ba7433b?q=80&w=800&auto=format&fit=crop" 
+                    src="https://images.unsplash.com/photo-1553979459-d2229ba7433b?q=80&w=400&auto=format&fit=crop" 
                     alt="Double Cheese con doble carne y cheddar"
                     width="400"
                     height="300"
                     loading="lazy"
+                    decoding="async"
                   >
                 </div>
                 <div class="p-4 sm:p-6">
@@ -167,11 +172,12 @@
               <article class="product-card" data-product="Bacon Bliss" data-price="620">
                 <div class="product-image">
                   <img 
-                    src="https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?q=80&w=800&auto=format&fit=crop" 
+                    src="https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?q=80&w=400&auto=format&fit=crop" 
                     alt="Bacon Bliss con bacon crujiente"
                     width="400"
                     height="300"
                     loading="lazy"
+                    decoding="async"
                   >
                   <span class="absolute top-3 left-3 bg-[var(--ketchup)] text-white text-xs font-bold px-2 py-1 rounded">Nuevo</span>
                 </div>
@@ -203,11 +209,12 @@
               <article class="product-card" data-product="Truffle Burger" data-price="780">
                 <div class="product-image">
                   <img 
-                    src="https://images.unsplash.com/photo-1572802419224-296b0aeee0d9?q=80&w=800&auto=format&fit=crop" 
+                    src="https://images.unsplash.com/photo-1572802419224-296b0aeee0d9?q=80&w=400&auto=format&fit=crop" 
                     alt="Truffle Burger premium con trufa"
                     width="400"
                     height="300"
                     loading="lazy"
+                    decoding="async"
                   >
                   <span class="absolute top-3 left-3 bg-[var(--ketchup)] text-white text-xs font-bold px-2 py-1 rounded">Premium</span>
                 </div>
@@ -234,11 +241,12 @@
               <article class="product-card" data-product="Spicy Jalapeño" data-price="550">
                 <div class="product-image">
                   <img 
-                    src="https://images.unsplash.com/photo-1586190848861-99aa4a171e90?q=80&w=800&auto=format&fit=crop" 
+                    src="https://images.unsplash.com/photo-1586190848861-99aa4a171e90?q=80&w=400&auto=format&fit=crop" 
                     alt="Spicy Jalapeño con guindillas"
                     width="400"
                     height="300"
                     loading="lazy"
+                    decoding="async"
                   >
                 </div>
                 <div class="p-4 sm:p-6">
@@ -264,11 +272,12 @@
               <article class="product-card" data-product="Veggie Burger" data-price="480">
                 <div class="product-image">
                   <img 
-                    src="https://images.unsplash.com/photo-1520072959219-c595dc870360?q=80&w=800&auto=format&fit=crop" 
+                    src="https://images.unsplash.com/photo-1520072959219-c595dc870360?q=80&w=400&auto=format&fit=crop" 
                     alt="Veggie Burger con aguacate"
                     width="400"
                     height="300"
                     loading="lazy"
+                    decoding="async"
                   >
                   <span class="absolute top-3 left-3 bg-green-500 text-white text-xs font-bold px-2 py-1 rounded">Veggie</span>
                 </div>
@@ -360,12 +369,13 @@
           </div>
           <div class="relative">
             <img 
-              src="https://images.unsplash.com/photo-1571091718767-18b5b1457add?q=80&w=1000&auto=format&fit=crop" 
+              src="https://images.unsplash.com/photo-1571091718767-18b5b1457add?q=80&w=800&auto=format&fit=crop" 
               alt="Chef preparando hamburguesas artesanales"
               class="rounded-2xl shadow-2xl w-full"
               width="500"
               height="375"
               loading="lazy"
+              decoding="async"
             >
           </div>
         </div>
