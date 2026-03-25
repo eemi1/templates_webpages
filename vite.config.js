@@ -11,6 +11,7 @@ export default defineConfig({
         main: resolve(__dirname, 'index.html'),
         parrilla: resolve(__dirname, 'parrilla/index.html'),
         hamburgueseria: resolve(__dirname, 'hamburgueseria/index.html'),
+        barberia: resolve(__dirname, 'barberia/index.html'),
       }
     }
   }
