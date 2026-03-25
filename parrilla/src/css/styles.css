@@ -19,6 +19,17 @@
     font-family: 'Crimson Text', Georgia, serif;
     background-color: var(--humo);
     color: var(--carbón);
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
   }
 }
 
@@ -29,44 +40,106 @@
 
   .section-title {
     font-family: 'Playfair Display', serif;
-    @apply text-4xl md:text-5xl font-bold tracking-tight;
+    font-size: clamp(1.75rem, 5vw, 3rem);
+    font-weight: 700;
+    letter-spacing: -0.01em;
   }
 
   .btn {
-    @apply inline-flex items-center justify-center px-8 py-4 rounded-sm font-semibold transition-all duration-300 cursor-pointer text-base;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 2rem;
+    font-weight: 600;
+    transition-property: transform, background-color, box-shadow;
+    transition-duration: 300ms;
+    transition-timing-function: ease-out;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 0.125rem;
+  }
+
+  .btn:focus-visible {
+    outline: 3px solid var(--brasa);
+    outline-offset: 2px;
   }
 
   .btn-primary {
     background: linear-gradient(135deg, var(--brasa) 0%, var(--brasa-oscura) 100%);
-    @apply text-white hover:shadow-[0_8px_30px_rgba(200,68,10,0.4)] hover:scale-105;
+    color: var(--blanco);
+  }
+
+  .btn-primary:hover {
+    box-shadow: 0 8px 30px rgba(200, 68, 10, 0.4);
+    transform: scale(1.05);
+  }
+
+  .btn-primary:active {
+    transform: scale(0.98);
   }
 
   .btn-outline {
-    @apply border-2 border-current text-[var(--carbón)] hover:bg-[var(--carbón)] hover:text-white;
+    border: 2px solid currentColor;
+    transition-property: background-color, color, transform;
+  }
+
+  .btn-outline:hover {
+    background-color: var(--carbón);
+    color: var(--blanco);
   }
 
   .btn-ghost {
-    @apply text-[var(--carbón)] hover:text-[var(--brasa)] transition-colors;
+    color: var(--carbón);
+    transition-property: color;
+    transition-duration: 200ms;
+  }
+
+  .btn-ghost:hover {
+    color: var(--brasa);
   }
 
   .card {
-    @apply bg-white rounded-lg overflow-hidden shadow-lg transition-all duration-500;
+    background-color: var(--blanco);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+    transition-property: transform, box-shadow;
+    transition-duration: 500ms;
+    transition-timing-function: ease-out;
   }
 
   .card:hover {
-    @apply shadow-2xl -translate-y-2;
+    box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+    transform: translateY(-0.5rem);
   }
 
   .tag {
-    @apply inline-block text-xs tracking-[0.3em] uppercase text-[var(--brasa)] border-l-2 border-[var(--brasa)] pl-3;
+    display: inline-block;
+    font-size: 0.75rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--brasa);
+    border-left: 2px solid var(--brasa);
+    padding-left: 0.75rem;
   }
 
   .menu-item {
-    @apply flex justify-between items-baseline border-b border-[var(--ceniza)] pb-4 mb-4;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 1px solid var(--ceniza);
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
   }
 
   .menu-item:last-child {
-    @apply border-b-0 mb-0 pb-0;
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .scroll-mt-20 {
+    scroll-margin-top: 5rem;
   }
 }
 
@@ -86,25 +159,16 @@
   }
 
   .text-gradient {
-    @apply bg-clip-text text-transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
     background-image: linear-gradient(135deg, var(--brasa) 0%, var(--asado) 100%);
-  }
-
-  .fade-in {
-    animation: fadeIn 0.8s ease-out forwards;
-    opacity: 0;
   }
 
   .slide-up {
     animation: slideUp 0.8s ease-out forwards;
     opacity: 0;
     transform: translateY(40px);
-  }
-}
-
-@keyframes fadeIn {
-  to {
-    opacity: 1;
   }
 }
 
@@ -128,4 +192,10 @@
 
 .animate-float {
   animation: float 6s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-float {
+    animation: none;
+  }
 }
