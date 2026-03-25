@@ -10,6 +10,7 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, 'index.html'),
         parrilla: resolve(__dirname, 'parrilla/index.html'),
+        hamburgueseria: resolve(__dirname, 'hamburgueseria/index.html'),
       }
     }
   }

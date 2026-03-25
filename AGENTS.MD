@@ -26,7 +26,7 @@ templates_webpages/
 ## Antes de crear cualquier plantilla
 1. Cargar la skill `frontend-design`
 2. Definir dirección estética clara antes de escribir código
-3. Revisar con `web-design-guidelines` antes de hacer commit
+3. Revisar con `web-design-guidelines` despues de terminar cada página y cuando se termine de realizar un cambio pedido.
 
 ## Estándares de cada plantilla
 - Cada plantilla vive en su propia carpeta con `index.html`
