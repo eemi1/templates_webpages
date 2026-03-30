@@ -54,3 +54,6 @@ templates_webpages/
 - No usar gradientes púrpura genéricos
 - No mezclar cambios de múltiples plantillas en un solo commit
 - No subir node_modules ni archivos .env
+
+## Aclaraciones 
+En caso de que se pida hacer una página que se puedan realizar pedidos por whatsapp, que este integrado tambien un carrito donde se agrupen los productos del pedido.
