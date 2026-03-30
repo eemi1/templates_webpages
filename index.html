@@ -3,41 +3,410 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Templates Webpages</title>
+  <title>Templates Webpages | Plantillas Profesionales</title>
+  <meta name="description" content="Colección de plantillas web profesionales para negocios. Pizzerías, cafeterías, barberías, peluquerías y más.">
+  <meta name="theme-color" content="#1a1a1a">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,600&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --negro: #1a1a1a;
+      --gris: #6b6b6b;
+      --gris-claro: #e8e4e1;
+      --blanco: #ffffff;
+      --terracotta: #c75d3a;
+      --cafe: #6f4e37;
+      --rosa: #d46a6a;
+      --oro: #c9a959;
+      --verde: #5a6c4a;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background-color: var(--gris-claro);
+      color: var(--negro);
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .hero {
+      background: var(--negro);
+      color: var(--blanco);
+      padding: 80px 24px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(2.5rem, 5vw, 3.5rem);
+      font-weight: 600;
+      margin-bottom: 16px;
+      letter-spacing: -0.02em;
+    }
+
+    .hero p {
+      color: rgba(255,255,255,0.7);
+      font-size: 1.125rem;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 60px 24px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--blanco);
+      border-radius: 12px;
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 32px rgba(0,0,0,0.08);
+    }
+
+    .card:focus-visible {
+      outline: 2px solid var(--accent, var(--oro));
+      outline-offset: 2px;
+    }
+
+    .card-header {
+      padding: 20px 20px 16px;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      border-bottom: 1px solid var(--gris-claro);
+    }
+
+    .card-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .card-icon svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    .card-meta {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .card-tag {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 3px 8px;
+      border-radius: 4px;
+      margin-bottom: 6px;
+    }
+
+    .card h2 {
+      font-family: 'Fraunces', serif;
+      font-size: 1.25rem;
+      font-weight: 500;
+      margin: 0;
+      line-height: 1.3;
+    }
+
+    .card-body {
+      padding: 16px 20px 20px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card p {
+      color: var(--gris);
+      font-size: 0.9rem;
+      line-height: 1.5;
+      margin: 0 0 16px;
+      flex: 1;
+    }
+
+    .card-features {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .card-feature {
+      font-size: 0.7rem;
+      color: var(--gris);
+      background: var(--gris-claro);
+      padding: 4px 10px;
+      border-radius: 20px;
+    }
+
+    /* Card colors */
+    .card[data-template="parrilla"] .card-icon { background: rgba(199,93,58,0.12); }
+    .card[data-template="hamburgueseria"] .card-icon { background: rgba(201,169,89,0.12); }
+    .card[data-template="barberia"] .card-icon { background: rgba(201,169,89,0.12); }
+    .card[data-template="peluqueria"] .card-icon { background: rgba(212,106,106,0.12); }
+    .card[data-template="pizzeria"] .card-icon { background: rgba(199,93,58,0.12); }
+    .card[data-template="cafeteria"] .card-icon { background: rgba(111,78,55,0.12); }
+
+    .card-icon[data-template="parrilla"] svg { stroke: var(--terracotta); }
+    .card-icon[data-template="hamburgueseria"] svg { fill: var(--oro); }
+    .card-icon[data-template="barberia"] svg { stroke: var(--oro); }
+    .card-icon[data-template="peluqueria"] svg { stroke: var(--rosa); }
+    .card-icon[data-template="pizzeria"] svg { stroke: var(--terracotta); }
+    .card-icon[data-template="cafeteria"] svg { stroke: var(--cafe); }
+
+    .card-tag[data-template="parrilla"] { background: rgba(199,93,58,0.1); color: var(--terracotta); }
+    .card-tag[data-template="hamburgueseria"] { background: rgba(201,169,89,0.1); color: var(--oro); }
+    .card-tag[data-template="barberia"] { background: rgba(201,169,89,0.1); color: var(--oro); }
+    .card-tag[data-template="peluqueria"] { background: rgba(212,106,106,0.1); color: var(--rosa); }
+    .card-tag[data-template="pizzeria"] { background: rgba(199,93,58,0.1); color: var(--terracotta); }
+    .card-tag[data-template="cafeteria"] { background: rgba(111,78,55,0.1); color: var(--cafe); }
+
+    footer {
+      text-align: center;
+      padding: 40px 24px;
+      color: var(--gris);
+      font-size: 0.875rem;
+    }
+
+    footer a {
+      color: var(--negro);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 480px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
-<body style="font-family: system-ui, sans-serif; max-width: 600px; margin: 50px auto; padding: 20px;">
-  <h1 style="font-size: 2rem; margin-bottom: 30px;">Plantillas Disponibles</h1>
-  <ul style="list-style: none; padding: 0;">
-    <li style="margin-bottom: 15px;">
-      <a href="./parrilla/" style="display: block; padding: 20px; background: #f4f4f4; border-radius: 8px; text-decoration: none; color: #333; font-weight: 600;">
-        Parrilla - Plantilla para restaurantes de carne a la parrilla
+<body>
+
+  <header class="hero">
+    <h1>Templates Webpages</h1>
+    <p>Plantillas web profesionales para tu negocio. Mobile-first, rápidas y con pedidos por WhatsApp.</p>
+  </header>
+
+  <main class="container">
+    <div class="grid">
+      
+      <a href="./pizzeria/" class="card" data-template="pizzeria">
+        <div class="card-header">
+          <div class="card-icon" data-template="pizzeria">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="32" cy="32" r="26" stroke-width="3"/>
+              <circle cx="22" cy="28" r="4"/>
+              <circle cx="36" cy="24" r="3"/>
+              <circle cx="42" cy="34" r="3"/>
+              <circle cx="28" cy="40" r="4"/>
+              <circle cx="38" cy="42" r="2" fill="#5a6c4a" stroke="none"/>
+            </svg>
+          </div>
+          <div class="card-meta">
+            <span class="card-tag" data-template="pizzeria">Gastronomía</span>
+            <h2>Pizzería Fornello</h2>
+          </div>
+        </div>
+        <div class="card-body">
+          <p>Plantilla con carrito y pedidos por WhatsApp.</p>
+          <div class="card-features">
+            <span class="card-feature">Carrito</span>
+            <span class="card-feature">WhatsApp</span>
+            <span class="card-feature">Responsive</span>
+          </div>
+        </div>
       </a>
-    </li>
-    <li style="margin-bottom: 15px;">
-      <a href="./hamburgueseria/" style="display: block; padding: 20px; background: #f4f4f4; border-radius: 8px; text-decoration: none; color: #333; font-weight: 600;">
-        Hamburguesería - Plantilla con carrito y pedidos por WhatsApp
+
+      <a href="./cafeteria/" class="card" data-template="cafeteria">
+        <div class="card-header">
+          <div class="card-icon" data-template="cafeteria">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M16 24h24v28a4 4 0 01-4 4H20a4 4 0 01-4-4V24z" stroke-width="3"/>
+              <path d="M40 28h6a4 4 0 014 4v4a4 4 0 01-4 4h-6" stroke-width="3"/>
+              <path d="M20 16c0-4 2-8 6-8s6 4 6 8" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="card-meta">
+            <span class="card-tag" data-template="cafeteria">Bebidas</span>
+            <h2>Cafetería Café</h2>
+          </div>
+        </div>
+        <div class="card-body">
+          <p>Plantilla con carrito y pedidos por WhatsApp.</p>
+          <div class="card-features">
+            <span class="card-feature">Carrito</span>
+            <span class="card-feature">WhatsApp</span>
+            <span class="card-feature">Pastelería</span>
+          </div>
+        </div>
       </a>
-    </li>
-    <li style="margin-bottom: 15px;">
-      <a href="./barberia/" style="display: block; padding: 20px; background: #f4f4f4; border-radius: 8px; text-decoration: none; color: #333; font-weight: 600;">
-        Barbería - Plantilla con precios y contacto por WhatsApp
+
+      <a href="./cafeteria_2/" class="card" data-template="cafeteria_2">
+        <div class="card-header">
+          <div class="card-icon" data-template="cafeteria_2">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M16 24h24v28a4 4 0 01-4 4H20a4 4 0 01-4-4V24z" stroke-width="3"/>
+              <path d="M40 28h6a4 4 0 014 4v4a4 4 0 01-4 4h-6" stroke-width="3"/>
+              <path d="M20 16c0-4 2-8 6-8s6 4 6 8" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="card-meta">
+            <span class="card-tag" data-template="cafeteria_2">Bebidas</span>
+            <h2>Cafetería Café 2</h2>
+          </div>
+        </div>
+        <div class="card-body">
+          <p>Plantilla con precios y contacto por WhatsApp.</p>
+          <div class="card-features">
+            <span class="card-feature">Carrito</span>
+            <span class="card-feature">WhatsApp</span>
+            <span class="card-feature">Pastelería</span>
+          </div>
+        </div>
       </a>
-    </li>
-    <li style="margin-bottom: 15px;">
-      <a href="./peluqueria/" style="display: block; padding: 20px; background: #f4f4f4; border-radius: 8px; text-decoration: none; color: #333; font-weight: 600;">
-        Peluquería - Plantilla con precios y contacto por WhatsApp
+
+      <a href="./hamburgueseria/" class="card" data-template="hamburgueseria">
+        <div class="card-header">
+          <div class="card-icon" data-template="hamburgueseria">
+            <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M12 28c0-8 8-14 20-14s20 6 20 14H12z"/>
+              <rect x="10" y="28" width="44" height="6" rx="2"/>
+              <path d="M10 38h44v4c0 4-4 8-8 8H18c-4 0-8-4-8-8v-4z"/>
+              <path d="M14 46h36v6c0 4-4 6-8 6H22c-4 0-8-2-8-6v-6z"/>
+            </svg>
+          </div>
+          <div class="card-meta">
+            <span class="card-tag" data-template="hamburgueseria">Gastronomía</span>
+            <h2>Hamburguesería</h2>
+          </div>
+        </div>
+        <div class="card-body">
+          <p>Plantilla con carrito y pedidos por WhatsApp.</p>
+          <div class="card-features">
+            <span class="card-feature">Carrito</span>
+            <span class="card-feature">WhatsApp</span>
+            <span class="card-feature">Responsive</span>
+          </div>
+        </div>
       </a>
-    </li>
-    <li style="margin-bottom: 15px;">
-      <a href="./pizzeria/" style="display: block; padding: 20px; background: #f4f4f4; border-radius: 8px; text-decoration: none; color: #333; font-weight: 600;">
-        Pizzería- Plantilla con carrito y pedidos por WhatsApp
+
+      <a href="./barberia/" class="card" data-template="barberia">
+        <div class="card-header">
+          <div class="card-icon" data-template="barberia">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M20 8l8 12h-6l8 12h6l-8 12h-8l8 12" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+              <rect x="32" y="20" width="20" height="32" rx="2" stroke-width="3"/>
+              <path d="M38 28h8M38 36h8M38 44h8" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="card-meta">
+            <span class="card-tag" data-template="barberia">Estética</span>
+            <h2>Barbería The Fade Room</h2>
+          </div>
+        </div>
+        <div class="card-body">
+          <p>Plantilla con precios y contacto por WhatsApp.</p>
+          <div class="card-features">
+            <span class="card-feature">Servicios</span>
+            <span class="card-feature">WhatsApp</span>
+            <span class="card-feature">Galería</span>
+          </div>
+        </div>
       </a>
-    </li>
-    <li style="margin-bottom: 15px;">
-      <a href="./cafeteria/" style="display: block; padding: 20px; background: #f4f4f4; border-radius: 8px; text-decoration: none; color: #333; font-weight: 600;">
-        Cafetería- Plantilla con carrito y pedidos por WhatsApp
+
+      <a href="./peluqueria/" class="card" data-template="peluqueria">
+        <div class="card-header">
+          <div class="card-icon" data-template="peluqueria">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="32" cy="32" r="24" stroke-width="2"/>
+              <circle cx="32" cy="24" r="8" stroke-width="2"/>
+              <path d="M20 44c4-8 8-12 12-12s8 4 12 12" stroke-width="2" stroke-linecap="round"/>
+              <circle cx="32" cy="32" r="4" fill="#c9a959" stroke="none"/>
+            </svg>
+          </div>
+          <div class="card-meta">
+            <span class="card-tag" data-template="peluqueria">Estética</span>
+            <h2>Peluquería Maison Rose</h2>
+          </div>
+        </div>
+        <div class="card-body">
+          <p>Plantilla con precios y contacto por WhatsApp.</p>
+          <div class="card-features">
+            <span class="card-feature">Servicios</span>
+            <span class="card-feature">WhatsApp</span>
+            <span class="card-feature">Elegante</span>
+          </div>
+        </div>
       </a>
-    </li>
-  </ul>
+
+      <a href="./parrilla/" class="card" data-template="parrilla">
+        <div class="card-header">
+          <div class="card-icon" data-template="parrilla">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect x="8" y="40" width="48" height="8" rx="2" stroke-width="3"/>
+              <path d="M12 40V24M20 40V28M28 40V24M36 40V28M44 40V24M52 40V32" stroke-width="2"/>
+              <path d="M16 24c0-4 4-8 8-8s8 4 8 8" stroke-width="2" stroke-linecap="round"/>
+              <circle cx="24" cy="48" r="4" stroke-width="2"/>
+              <circle cx="40" cy="48" r="4" stroke-width="2"/>
+            </svg>
+          </div>
+          <div class="card-meta">
+            <span class="card-tag" data-template="parrilla">Gastronomía</span>
+            <h2>Parrilla</h2>
+          </div>
+        </div>
+        <div class="card-body">
+          <p>Plantilla para restaurantes de carne a la parrilla.</p>
+          <div class="card-features">
+            <span class="card-feature">Menú</span>
+            <span class="card-feature">WhatsApp</span>
+            <span class="card-feature">Contacto</span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </main>
+
+  <footer>
+    <p>Designed and developed by <a href="https://github.com/eemi1">eemi1</a> and <a href="https://github.com/v4leenn">v4leenn</a></p>
+    <small>Plantillas creadas con <a href="https://tailwindcss.com">Tailwind CSS</a> v4 · <a href="https://vitejs.dev">Vite</a></small>
+  </footer>
+
 </body>
 </html>
