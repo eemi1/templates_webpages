@@ -1,0 +1,271 @@
+@import "tailwindcss";
+
+:root {
+  --terracotta: #c75d3a;
+  --terracotta-oscuro: #a84d2f;
+  --verde-oliva: #5a6c4a;
+  --crema: #faf5f0;
+  --crema-oscuro: #f0ebe3;
+  --negro: #1f1f1f;
+  --gris: #6b6b6b;
+  --blanco: #ffffff;
+}
+
+@theme {
+  --font-display: "Playfair Display", serif;
+  --font-body: "DM Sans", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--crema);
+  color: var(--negro);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background-color: var(--terracotta);
+  color: var(--blanco);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.grain {
+  position: relative;
+}
+
+.grain::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 1000;
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  line-height: 1.1;
+}
+
+.menu-title {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+.divider {
+  width: 80px;
+  height: 2px;
+  background: var(--terracotta);
+}
+
+.divider-light {
+  width: 40px;
+  height: 1px;
+  background: var(--terracotta);
+  opacity: 0.5;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.75rem;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  transition: all 0.25s ease;
+  cursor: pointer;
+  text-decoration: none;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  border: none;
+}
+
+.btn-primary {
+  background-color: var(--terracotta);
+  color: var(--blanco);
+}
+
+.btn-primary:hover {
+  background-color: var(--terracotta-oscuro);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background-color: var(--verde-oliva);
+  color: var(--blanco);
+}
+
+.btn-secondary:hover {
+  background-color: #4a5c3d;
+  transform: translateY(-2px);
+}
+
+.btn:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--terracotta);
+  outline-offset: 2px;
+}
+
+.price-tag {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.01em;
+  color: var(--terracotta);
+}
+
+.pizza-price {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--terracotta);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.02em;
+}
+
+.pizza-card {
+  cursor: default;
+}
+
+.pizza-item {
+  cursor: default;
+}
+
+.pizza-item:hover {
+  background-color: var(--crema-oscuro);
+}
+
+.add-to-cart-btn {
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.add-to-cart-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(199, 93, 58, 0.3);
+}
+
+.nav-title {
+  color: var(--blanco);
+  transition: color 0.3s ease;
+}
+
+.nav-link {
+  color: rgba(255, 255, 255, 0.85);
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--terracotta);
+}
+
+.nav-logo circle,
+.nav-logo path {
+  transition: fill 0.3s ease;
+}
+
+.navbar-scrolled .nav-title,
+.navbar-scrolled .nav-link {
+  color: var(--negro);
+}
+
+.navbar-scrolled .nav-link:hover {
+  color: var(--terracotta);
+}
+
+.add-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--terracotta);
+  color: var(--blanco);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  font-weight: 300;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+}
+
+.add-btn:hover {
+  background: var(--terracotta-oscuro);
+  transform: scale(1.1);
+}
+
+.cart-badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  width: 22px;
+  height: 22px;
+  background: var(--terracotta);
+  color: var(--blanco);
+  border-radius: 50%;
+  font-size: 0.75rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.slide-up {
+  opacity: 0;
+  animation: fadeIn 0.8s ease forwards;
+}
+
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .slide-up, .animate-float, .menu-card:hover .menu-card-image img {
+    animation: none;
+    transform: none;
+    opacity: 1;
+  }
+}
