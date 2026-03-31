@@ -312,6 +312,61 @@
   .scroll-mt-20 {
     scroll-margin-top: 5rem;
   }
+
+  .menu-tab {
+    padding: 0.625rem 1.25rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    border-radius: 9999px;
+    border: 2px solid transparent;
+    background-color: var(--white);
+    color: var(--carbon);
+    cursor: pointer;
+    transition-property: background-color, color, border-color, transform;
+    transition-duration: 200ms;
+    transition-timing-function: ease-out;
+    touch-action: manipulation;
+  }
+
+  .menu-tab:hover {
+    background-color: var(--mostaza);
+    transform: scale(1.02);
+  }
+
+  .menu-tab:focus-visible {
+    outline: 3px solid var(--ketchup);
+    outline-offset: 2px;
+  }
+
+  .menu-tab.active {
+    background-color: var(--carbon);
+    color: var(--white);
+    border-color: var(--carbon);
+  }
+
+  .menu-tab.active:hover {
+    background-color: var(--carbon);
+    transform: scale(1.02);
+  }
+
+  .product-card.hidden {
+    display: none;
+  }
+
+  .product-card.fade-in {
+    animation: fadeIn 0.3s ease-out;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @layer utilities {

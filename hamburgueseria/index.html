@@ -128,245 +128,315 @@
 
     <section id="menu" class="py-16 sm:py-20 md:py-32 bg-[var(--smoke)] scroll-mt-20">
       <div class="max-w-7xl mx-auto px-4 sm:px-6">
-        <div class="text-center mb-12 sm:mb-16">
+        <div class="text-center mb-8 sm:mb-12">
           <span class="tag mb-4 block">Nuestra Carta</span>
           <h2 class="section-title">EL MENÚ</h2>
         </div>
 
-        <div class="grid lg:grid-cols-2 gap-8 lg:gap-12">
-          <div>
-            <h3 class="category-title">Clásicas</h3>
-            <div class="space-y-6">
-              <article class="product-card" data-product="Classic Burger" data-price="450">
-                <div class="product-image">
-                  <img 
-                    src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=400&auto=format&fit=crop" 
-                    alt="Classic Burger con carne smash y cheddar"
-                    width="400"
-                    height="300"
-                    loading="lazy"
-                    decoding="async"
-                  >
-                  <span class="absolute top-3 left-3 bg-[var(--mostaza)] text-[var(--carbon)] text-xs font-bold px-2 py-1 rounded">Popular</span>
-                </div>
-                <div class="p-4 sm:p-6">
-                  <div class="flex justify-between items-start gap-4 mb-2">
-                    <h4 class="font-bold text-lg">Classic Burger</h4>
-                    <span class="text-[var(--ketchup)] font-bold text-lg whitespace-nowrap">$450</span>
-                  </div>
-                  <p class="text-gray-500 text-sm mb-4">Carne smash, cheddar, lechuga, tomate, cebolla, salsa especial</p>
-                  <div class="flex gap-2">
-                    <button class="btn-add-cart btn-mostaza flex-1 py-3 text-sm" data-name="Classic Burger" data-price="450">
-                      <span class="text-lg leading-none mr-1" aria-hidden="true">+</span>
-                      Agregar al carrito
-                    </button>
-                    <button class="btn-whatsapp btn-primary px-3 py-3" aria-label="Pedir Classic Burger por WhatsApp" data-name="Classic Burger" data-price="450">
-                      <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-                      </svg>
-                    </button>
-                  </div>
-                </div>
-              </article>
+        <div class="flex flex-wrap justify-center gap-2 sm:gap-3 mb-10 sm:mb-12" role="tablist" aria-label="Categorías del menú">
+          <button class="menu-tab active" data-category="todas" role="tab" aria-selected="true" aria-controls="menu-grid">
+            Todas
+          </button>
+          <button class="menu-tab" data-category="clasicas" role="tab" aria-selected="false" aria-controls="menu-grid">
+            Clásicas
+          </button>
+          <button class="menu-tab" data-category="especiales" role="tab" aria-selected="false" aria-controls="menu-grid">
+            Especiales
+          </button>
+          <button class="menu-tab" data-category="premium" role="tab" aria-selected="false" aria-controls="menu-grid">
+            Premium
+          </button>
+          <button class="menu-tab" data-category="veggie" role="tab" aria-selected="false" aria-controls="menu-grid">
+            Veggie
+          </button>
+          <button class="menu-tab" data-category="acomp" role="tab" aria-selected="false" aria-controls="menu-grid">
+            Acompañamientos
+          </button>
+        </div>
 
-              <article class="product-card" data-product="Double Cheese" data-price="580">
-                <div class="product-image">
-                  <img 
-                    src="https://images.unsplash.com/photo-1553979459-d2229ba7433b?q=80&w=400&auto=format&fit=crop" 
-                    alt="Double Cheese con doble carne y cheddar"
-                    width="400"
-                    height="300"
-                    loading="lazy"
-                    decoding="async"
-                  >
-                </div>
-                <div class="p-4 sm:p-6">
-                  <div class="flex justify-between items-start gap-4 mb-2">
-                    <h4 class="font-bold text-lg">Double Cheese</h4>
-                    <span class="text-[var(--ketchup)] font-bold text-lg whitespace-nowrap">$580</span>
-                  </div>
-                  <p class="text-gray-500 text-sm mb-4">Doble carne smash, doble cheddar, pepinillos, cebolla caramelizada</p>
-                  <div class="flex gap-2">
-                    <button class="btn-add-cart btn-mostaza flex-1 py-3 text-sm" data-name="Double Cheese" data-price="580">
-                      <span class="text-lg leading-none mr-1" aria-hidden="true">+</span>
-                      Agregar al carrito
-                    </button>
-                    <button class="btn-whatsapp btn-primary px-3 py-3" aria-label="Pedir Double Cheese por WhatsApp" data-name="Double Cheese" data-price="580">
-                      <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-                      </svg>
-                    </button>
-                  </div>
-                </div>
-              </article>
-
-              <article class="product-card" data-product="Bacon Bliss" data-price="620">
-                <div class="product-image">
-                  <img 
-                    src="https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?q=80&w=400&auto=format&fit=crop" 
-                    alt="Bacon Bliss con bacon crujiente"
-                    width="400"
-                    height="300"
-                    loading="lazy"
-                    decoding="async"
-                  >
-                  <span class="absolute top-3 left-3 bg-[var(--ketchup)] text-white text-xs font-bold px-2 py-1 rounded">Nuevo</span>
-                </div>
-                <div class="p-4 sm:p-6">
-                  <div class="flex justify-between items-start gap-4 mb-2">
-                    <h4 class="font-bold text-lg">Bacon Bliss</h4>
-                    <span class="text-[var(--ketchup)] font-bold text-lg whitespace-nowrap">$620</span>
-                  </div>
-                  <p class="text-gray-500 text-sm mb-4">Carne smash, bacon crujiente, cheddar, cebolla crispy, salsa BBQ</p>
-                  <div class="flex gap-2">
-                    <button class="btn-add-cart btn-mostaza flex-1 py-3 text-sm" data-name="Bacon Bliss" data-price="620">
-                      <span class="text-lg leading-none mr-1" aria-hidden="true">+</span>
-                      Agregar al carrito
-                    </button>
-                    <button class="btn-whatsapp btn-primary px-3 py-3" aria-label="Pedir Bacon Bliss por WhatsApp" data-name="Bacon Bliss" data-price="620">
-                      <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-                      </svg>
-                    </button>
-                  </div>
-                </div>
-              </article>
+        <div id="menu-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" role="tabpanel">
+          <article class="product-card" data-product="Classic Burger" data-price="450" data-category="clasicas">
+            <div class="product-image">
+              <img 
+                src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=400&auto=format&fit=crop" 
+                alt="Classic Burger con carne smash y cheddar"
+                width="400"
+                height="300"
+                loading="lazy"
+                decoding="async"
+              >
+              <span class="absolute top-3 left-3 bg-[var(--mostaza)] text-[var(--carbon)] text-xs font-bold px-2 py-1 rounded">Popular</span>
             </div>
-          </div>
-
-          <div>
-            <h3 class="category-title">Especiales</h3>
-            <div class="space-y-6">
-              <article class="product-card" data-product="Truffle Burger" data-price="780">
-                <div class="product-image">
-                  <img 
-                    src="https://images.unsplash.com/photo-1572802419224-296b0aeee0d9?q=80&w=400&auto=format&fit=crop" 
-                    alt="Truffle Burger premium con trufa"
-                    width="400"
-                    height="300"
-                    loading="lazy"
-                    decoding="async"
-                  >
-                  <span class="absolute top-3 left-3 bg-[var(--ketchup)] text-white text-xs font-bold px-2 py-1 rounded">Premium</span>
-                </div>
-                <div class="p-4 sm:p-6">
-                  <div class="flex justify-between items-start gap-4 mb-2">
-                    <h4 class="font-bold text-lg">Truffle Burger</h4>
-                    <span class="text-[var(--ketchup)] font-bold text-lg whitespace-nowrap">$780</span>
-                  </div>
-                  <p class="text-gray-500 text-sm mb-4">Carne premium, queso gruyère, trufa, setas, rúcula, mayonesa de trufa</p>
-                  <div class="flex gap-2">
-                    <button class="btn-add-cart btn-mostaza flex-1 py-3 text-sm" data-name="Truffle Burger" data-price="780">
-                      <span class="text-lg leading-none mr-1" aria-hidden="true">+</span>
-                      Agregar al carrito
-                    </button>
-                    <button class="btn-whatsapp btn-primary px-3 py-3" aria-label="Pedir Truffle Burger por WhatsApp" data-name="Truffle Burger" data-price="780">
-                      <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-                      </svg>
-                    </button>
-                  </div>
-                </div>
-              </article>
-
-              <article class="product-card" data-product="Spicy Jalapeño" data-price="550">
-                <div class="product-image">
-                  <img 
-                    src="https://images.unsplash.com/photo-1586190848861-99aa4a171e90?q=80&w=400&auto=format&fit=crop" 
-                    alt="Spicy Jalapeño con guindillas"
-                    width="400"
-                    height="300"
-                    loading="lazy"
-                    decoding="async"
-                  >
-                </div>
-                <div class="p-4 sm:p-6">
-                  <div class="flex justify-between items-start gap-4 mb-2">
-                    <h4 class="font-bold text-lg">Spicy Jalapeño</h4>
-                    <span class="text-[var(--ketchup)] font-bold text-lg whitespace-nowrap">$550</span>
-                  </div>
-                  <p class="text-gray-500 text-sm mb-4">Carne smash, pepper jack, jalapeños, cebolla morada, salsa chipotle</p>
-                  <div class="flex gap-2">
-                    <button class="btn-add-cart btn-mostaza flex-1 py-3 text-sm" data-name="Spicy Jalapeño" data-price="550">
-                      <span class="text-lg leading-none mr-1" aria-hidden="true">+</span>
-                      Agregar al carrito
-                    </button>
-                    <button class="btn-whatsapp btn-primary px-3 py-3" aria-label="Pedir Spicy Jalapeño por WhatsApp" data-name="Spicy Jalapeño" data-price="550">
-                      <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-                      </svg>
-                    </button>
-                  </div>
-                </div>
-              </article>
-
-              <article class="product-card" data-product="Veggie Burger" data-price="480">
-                <div class="product-image">
-                  <img 
-                    src="https://images.unsplash.com/photo-1520072959219-c595dc870360?q=80&w=400&auto=format&fit=crop" 
-                    alt="Veggie Burger con aguacate"
-                    width="400"
-                    height="300"
-                    loading="lazy"
-                    decoding="async"
-                  >
-                  <span class="absolute top-3 left-3 bg-green-500 text-white text-xs font-bold px-2 py-1 rounded">Veggie</span>
-                </div>
-                <div class="p-4 sm:p-6">
-                  <div class="flex justify-between items-start gap-4 mb-2">
-                    <h4 class="font-bold text-lg">Veggie Burger</h4>
-                    <span class="text-[var(--ketchup)] font-bold text-lg whitespace-nowrap">$480</span>
-                  </div>
-                  <p class="text-gray-500 text-sm mb-4">Hamburguesa de garbanzos, aguacate, tomate, lechuga, salsa de tahini</p>
-                  <div class="flex gap-2">
-                    <button class="btn-add-cart btn-mostaza flex-1 py-3 text-sm" data-name="Veggie Burger" data-price="480">
-                      <span class="text-lg leading-none mr-1" aria-hidden="true">+</span>
-                      Agregar al carrito
-                    </button>
-                    <button class="btn-whatsapp btn-primary px-3 py-3" aria-label="Pedir Veggie Burger por WhatsApp" data-name="Veggie Burger" data-price="480">
-                      <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-                      </svg>
-                    </button>
-                  </div>
-                </div>
-              </article>
-            </div>
-
-            <h3 class="category-title mt-10">Acompañamientos</h3>
-            <div class="space-y-3 sm:space-y-4">
-              <div class="flex items-center justify-between bg-white p-3 sm:p-4 rounded-xl shadow">
-                <div>
-                  <h4 class="font-bold text-sm sm:text-base">Papas Fritas</h4>
-                  <p class="text-gray-500 text-xs sm:text-sm">Crujientes y doradas</p>
-                </div>
-                <div class="flex items-center gap-3">
-                  <span class="font-bold text-[var(--ketchup)] text-sm sm:text-base">$180</span>
-                  <button class="btn-add-cart btn-mostaza w-10 h-10 text-lg font-bold" data-name="Papas Fritas" data-price="180" aria-label="Agregar Papas Fritas">+</button>
-                </div>
+            <div class="p-4 sm:p-5">
+              <div class="flex justify-between items-start gap-4 mb-2">
+                <h4 class="font-bold text-base">Classic Burger</h4>
+                <span class="text-[var(--ketchup)] font-bold whitespace-nowrap">$450</span>
               </div>
-              <div class="flex items-center justify-between bg-white p-3 sm:p-4 rounded-xl shadow">
-                <div>
-                  <h4 class="font-bold text-sm sm:text-base">Onion Rings</h4>
-                  <p class="text-gray-500 text-xs sm:text-sm">Aros de cebolla rebozados</p>
-                </div>
-                <div class="flex items-center gap-3">
-                  <span class="font-bold text-[var(--ketchup)] text-sm sm:text-base">$220</span>
-                  <button class="btn-add-cart btn-mostaza w-10 h-10 text-lg font-bold" data-name="Onion Rings" data-price="220" aria-label="Agregar Onion Rings">+</button>
-                </div>
-              </div>
-              <div class="flex items-center justify-between bg-white p-3 sm:p-4 rounded-xl shadow">
-                <div>
-                  <h4 class="font-bold text-sm sm:text-base">Bebida 500ml</h4>
-                  <p class="text-gray-500 text-xs sm:text-sm">Gaseosa o jugo</p>
-                </div>
-                <div class="flex items-center gap-3">
-                  <span class="font-bold text-[var(--ketchup)] text-sm sm:text-base">$120</span>
-                  <button class="btn-add-cart btn-mostaza w-10 h-10 text-lg font-bold" data-name="Bebida 500ml" data-price="120" aria-label="Agregar Bebida">+</button>
-                </div>
+              <p class="text-gray-500 text-sm mb-4">Carne smash, cheddar, lechuga, tomate, cebolla, salsa especial</p>
+              <div class="flex gap-2">
+                <button class="btn-add-cart btn-mostaza flex-1 py-2.5 text-sm" data-name="Classic Burger" data-price="450">
+                  <span class="text-lg leading-none mr-1" aria-hidden="true">+</span>
+                  Agregar
+                </button>
+                <button class="btn-whatsapp btn-primary px-3 py-2.5" aria-label="Pedir Classic Burger por WhatsApp" data-name="Classic Burger" data-price="450">
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                  </svg>
+                </button>
               </div>
             </div>
-          </div>
+          </article>
+
+          <article class="product-card" data-product="Double Cheese" data-price="580" data-category="clasicas">
+            <div class="product-image">
+              <img 
+                src="https://images.unsplash.com/photo-1553979459-d2229ba7433b?q=80&w=400&auto=format&fit=crop" 
+                alt="Double Cheese con doble carne y cheddar"
+                width="400"
+                height="300"
+                loading="lazy"
+                decoding="async"
+              >
+            </div>
+            <div class="p-4 sm:p-5">
+              <div class="flex justify-between items-start gap-4 mb-2">
+                <h4 class="font-bold text-base">Double Cheese</h4>
+                <span class="text-[var(--ketchup)] font-bold whitespace-nowrap">$580</span>
+              </div>
+              <p class="text-gray-500 text-sm mb-4">Doble carne smash, doble cheddar, pepinillos, cebolla caramelizada</p>
+              <div class="flex gap-2">
+                <button class="btn-add-cart btn-mostaza flex-1 py-2.5 text-sm" data-name="Double Cheese" data-price="580">
+                  <span class="text-lg leading-none mr-1" aria-hidden="true">+</span>
+                  Agregar
+                </button>
+                <button class="btn-whatsapp btn-primary px-3 py-2.5" aria-label="Pedir Double Cheese por WhatsApp" data-name="Double Cheese" data-price="580">
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-product="Bacon Bliss" data-price="620" data-category="clasicas">
+            <div class="product-image">
+              <img 
+                src="https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?q=80&w=400&auto=format&fit=crop" 
+                alt="Bacon Bliss con bacon crujiente"
+                width="400"
+                height="300"
+                loading="lazy"
+                decoding="async"
+              >
+              <span class="absolute top-3 left-3 bg-[var(--ketchup)] text-white text-xs font-bold px-2 py-1 rounded">Nuevo</span>
+            </div>
+            <div class="p-4 sm:p-5">
+              <div class="flex justify-between items-start gap-4 mb-2">
+                <h4 class="font-bold text-base">Bacon Bliss</h4>
+                <span class="text-[var(--ketchup)] font-bold whitespace-nowrap">$620</span>
+              </div>
+              <p class="text-gray-500 text-sm mb-4">Carne smash, bacon crujiente, cheddar, cebolla crispy, salsa BBQ</p>
+              <div class="flex gap-2">
+                <button class="btn-add-cart btn-mostaza flex-1 py-2.5 text-sm" data-name="Bacon Bliss" data-price="620">
+                  <span class="text-lg leading-none mr-1" aria-hidden="true">+</span>
+                  Agregar
+                </button>
+                <button class="btn-whatsapp btn-primary px-3 py-2.5" aria-label="Pedir Bacon Bliss por WhatsApp" data-name="Bacon Bliss" data-price="620">
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-product="Truffle Burger" data-price="780" data-category="premium">
+            <div class="product-image">
+              <img 
+                src="https://images.unsplash.com/photo-1572802419224-296b0aeee0d9?q=80&w=400&auto=format&fit=crop" 
+                alt="Truffle Burger premium con trufa"
+                width="400"
+                height="300"
+                loading="lazy"
+                decoding="async"
+              >
+              <span class="absolute top-3 left-3 bg-[var(--ketchup)] text-white text-xs font-bold px-2 py-1 rounded">Premium</span>
+            </div>
+            <div class="p-4 sm:p-5">
+              <div class="flex justify-between items-start gap-4 mb-2">
+                <h4 class="font-bold text-base">Truffle Burger</h4>
+                <span class="text-[var(--ketchup)] font-bold whitespace-nowrap">$780</span>
+              </div>
+              <p class="text-gray-500 text-sm mb-4">Carne premium, queso gruyère, trufa, setas, rúcula, mayonesa de trufa</p>
+              <div class="flex gap-2">
+                <button class="btn-add-cart btn-mostaza flex-1 py-2.5 text-sm" data-name="Truffle Burger" data-price="780">
+                  <span class="text-lg leading-none mr-1" aria-hidden="true">+</span>
+                  Agregar
+                </button>
+                <button class="btn-whatsapp btn-primary px-3 py-2.5" aria-label="Pedir Truffle Burger por WhatsApp" data-name="Truffle Burger" data-price="780">
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-product="Spicy Jalapeño" data-price="550" data-category="especiales">
+            <div class="product-image">
+              <img 
+                src="https://images.unsplash.com/photo-1586190848861-99aa4a171e90?q=80&w=400&auto=format&fit=crop" 
+                alt="Spicy Jalapeño con guindillas"
+                width="400"
+                height="300"
+                loading="lazy"
+                decoding="async"
+              >
+            </div>
+            <div class="p-4 sm:p-5">
+              <div class="flex justify-between items-start gap-4 mb-2">
+                <h4 class="font-bold text-base">Spicy Jalapeño</h4>
+                <span class="text-[var(--ketchup)] font-bold whitespace-nowrap">$550</span>
+              </div>
+              <p class="text-gray-500 text-sm mb-4">Carne smash, pepper jack, jalapeños, cebolla morada, salsa chipotle</p>
+              <div class="flex gap-2">
+                <button class="btn-add-cart btn-mostaza flex-1 py-2.5 text-sm" data-name="Spicy Jalapeño" data-price="550">
+                  <span class="text-lg leading-none mr-1" aria-hidden="true">+</span>
+                  Agregar
+                </button>
+                <button class="btn-whatsapp btn-primary px-3 py-2.5" aria-label="Pedir Spicy Jalapeño por WhatsApp" data-name="Spicy Jalapeño" data-price="550">
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-product="Veggie Burger" data-price="480" data-category="veggie">
+            <div class="product-image">
+              <img 
+                src="https://images.unsplash.com/photo-1520072959219-c595dc870360?q=80&w=400&auto=format&fit=crop" 
+                alt="Veggie Burger con aguacate"
+                width="400"
+                height="300"
+                loading="lazy"
+                decoding="async"
+              >
+              <span class="absolute top-3 left-3 bg-green-500 text-white text-xs font-bold px-2 py-1 rounded">Veggie</span>
+            </div>
+            <div class="p-4 sm:p-5">
+              <div class="flex justify-between items-start gap-4 mb-2">
+                <h4 class="font-bold text-base">Veggie Burger</h4>
+                <span class="text-[var(--ketchup)] font-bold whitespace-nowrap">$480</span>
+              </div>
+              <p class="text-gray-500 text-sm mb-4">Hamburguesa de garbanzos, aguacate, tomate, lechuga, salsa de tahini</p>
+              <div class="flex gap-2">
+                <button class="btn-add-cart btn-mostaza flex-1 py-2.5 text-sm" data-name="Veggie Burger" data-price="480">
+                  <span class="text-lg leading-none mr-1" aria-hidden="true">+</span>
+                  Agregar
+                </button>
+                <button class="btn-whatsapp btn-primary px-3 py-2.5" aria-label="Pedir Veggie Burger por WhatsApp" data-name="Veggie Burger" data-price="480">
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card acomp-item" data-product="Papas Fritas" data-price="180" data-category="acomp">
+            <div class="product-image">
+              <img 
+                src="https://images.unsplash.com/photo-1630384060421-cb20d0e0649d?q=80&w=400&auto=format&fit=crop" 
+                alt="Papas fritas crujientes"
+                width="400"
+                height="300"
+                loading="lazy"
+                decoding="async"
+              >
+            </div>
+            <div class="p-4 sm:p-5">
+              <div class="flex justify-between items-start gap-4 mb-2">
+                <h4 class="font-bold text-base">Papas Fritas</h4>
+                <span class="text-[var(--ketchup)] font-bold whitespace-nowrap">$180</span>
+              </div>
+              <p class="text-gray-500 text-sm mb-4">Crujientes y doradas, servidas con salsa a elección</p>
+              <div class="flex gap-2">
+                <button class="btn-add-cart btn-mostaza flex-1 py-2.5 text-sm" data-name="Papas Fritas" data-price="180">
+                  <span class="text-lg leading-none mr-1" aria-hidden="true">+</span>
+                  Agregar
+                </button>
+                <button class="btn-whatsapp btn-primary px-3 py-2.5" aria-label="Pedir Papas Fritas por WhatsApp" data-name="Papas Fritas" data-price="180">
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card acomp-item" data-product="Onion Rings" data-price="220" data-category="acomp">
+            <div class="product-image">
+              <img 
+                src="https://images.unsplash.com/photo-1639024471283-03518883512d?q=80&w=400&auto=format&fit=crop" 
+                alt="Onion rings rebozados"
+                width="400"
+                height="300"
+                loading="lazy"
+                decoding="async"
+              >
+            </div>
+            <div class="p-4 sm:p-5">
+              <div class="flex justify-between items-start gap-4 mb-2">
+                <h4 class="font-bold text-base">Onion Rings</h4>
+                <span class="text-[var(--ketchup)] font-bold whitespace-nowrap">$220</span>
+              </div>
+              <p class="text-gray-500 text-sm mb-4">Aros de cebolla rebozados con salsaranch</p>
+              <div class="flex gap-2">
+                <button class="btn-add-cart btn-mostaza flex-1 py-2.5 text-sm" data-name="Onion Rings" data-price="220">
+                  <span class="text-lg leading-none mr-1" aria-hidden="true">+</span>
+                  Agregar
+                </button>
+                <button class="btn-whatsapp btn-primary px-3 py-2.5" aria-label="Pedir Onion Rings por WhatsApp" data-name="Onion Rings" data-price="220">
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card acomp-item" data-product="Bebida 500ml" data-price="120" data-category="acomp">
+            <div class="product-image">
+              <img 
+                src="https://images.unsplash.com/photo-1624552184280-9e9631bbeee9?q=80&w=400&auto=format&fit=crop" 
+                alt="Bebida fría con hielo"
+                width="400"
+                height="300"
+                loading="lazy"
+                decoding="async"
+              >
+            </div>
+            <div class="p-4 sm:p-5">
+              <div class="flex justify-between items-start gap-4 mb-2">
+                <h4 class="font-bold text-base">Bebida 500ml</h4>
+                <span class="text-[var(--ketchup)] font-bold whitespace-nowrap">$120</span>
+              </div>
+              <p class="text-gray-500 text-sm mb-4">Gaseosa o jugo a elección</p>
+              <div class="flex gap-2">
+                <button class="btn-add-cart btn-mostaza flex-1 py-2.5 text-sm" data-name="Bebida 500ml" data-price="120">
+                  <span class="text-lg leading-none mr-1" aria-hidden="true">+</span>
+                  Agregar
+                </button>
+                <button class="btn-whatsapp btn-primary px-3 py-2.5" aria-label="Pedir Bebida por WhatsApp" data-name="Bebida 500ml" data-price="120">
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -682,6 +752,34 @@
           toggleCart();
         }
       }
+    });
+
+    const menuTabs = document.querySelectorAll('.menu-tab');
+    const menuGrid = document.getElementById('menu-grid');
+
+    menuTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const category = tab.dataset.category;
+
+        menuTabs.forEach(t => {
+          t.classList.remove('active');
+          t.setAttribute('aria-selected', 'false');
+        });
+        tab.classList.add('active');
+        tab.setAttribute('aria-selected', 'true');
+
+        const cards = menuGrid.querySelectorAll('.product-card');
+        cards.forEach(card => {
+          const cardCategory = card.dataset.category;
+          if (category === 'todas' || cardCategory === category) {
+            card.classList.remove('hidden');
+            card.classList.add('fade-in');
+          } else {
+            card.classList.add('hidden');
+            card.classList.remove('fade-in');
+          }
+        });
+      });
     });
   </script>
 </body>
