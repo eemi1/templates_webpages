@@ -16,6 +16,7 @@ export default defineConfig({
         cafeteria_2: resolve(__dirname, 'cafeteria_2/index.html'),
         peluqueria: resolve(__dirname, 'peluqueria/index.html'),
         pizzeria: resolve(__dirname, 'pizzeria/index.html'),
+        veterinaria: resolve(__dirname, 'veterinaria/index.html'),
       }
     }
   }
